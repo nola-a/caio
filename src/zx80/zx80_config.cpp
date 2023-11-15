@@ -19,6 +19,7 @@
 #include "zx80_config.hpp"
 
 #include <sstream>
+#include <vector>
 
 
 namespace caio {

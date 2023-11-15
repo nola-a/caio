@@ -20,9 +20,9 @@ NPROC:=			${shell sysctl -n hw.ncpu}
 
 EXTRA_3RDPARTY_DIRS+=
 
-SYSDEP_CPPFLAGS+=	-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
+SYSDEP_CPPFLAGS+=	-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include -Wno-nullability-completeness
 
-UI_CXXFLAGS+=		${shell ${PKG_CONFIG} --cflags sdl2 sdl2_image}
+UI_CXXFLAGS+=		${shell ${PKG_CONFIG} --cflags sdl2 sdl2_image} -DTARGET_OS_OSX=1
 
 UI_LDADD+=		${shell ${PKG_CONFIG} --libs sdl2 sdl2_image}
 
